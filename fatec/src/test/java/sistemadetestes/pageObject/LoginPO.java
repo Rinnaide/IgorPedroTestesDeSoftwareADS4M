@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import pageObject.BasePO;
+
 public class LoginPO extends BasePO {
 
     @FindBy(id = "email")
