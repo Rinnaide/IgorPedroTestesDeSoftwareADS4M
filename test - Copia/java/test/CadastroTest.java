@@ -19,22 +19,6 @@ public class CadastroTest extends BaseTest {
 		loginPage = new LoginPO(driver);
 	}
 
-
-	@Test
-	public void TC011_naoDeveCadastrarProdutoNoSistemaComCodigoNomeQuantidadeValorEDataVazios() {
-		cadastroPage.CaixaCadastro("", "","","","");
-
-		String mensagem = cadastroPage.obterMensagemCadastro();
-
-		assertEquals(mensagem, "Todos os campos são obrigatórios para o cadastro!");
-	}
-
-	@Test
-	public void TC012_deveVerificarCadastroDisponivelAposLogin() {
-		loginPage.executarAcaoDeLogar("admin@admin.com", "admin@123");
-
-		assertTrue(cadastroPage.buttonCadastro.isDisplayed());
-	}
 	@Test
 	public void TC010_deveVerificarSeUsuarioCriouUmProduto() {
 		loginPage.executarAcaoDeLogar("admin@admin.com", "admin@123");
@@ -44,16 +28,23 @@ public class CadastroTest extends BaseTest {
 		assertTrue(cadastroPage.verificarProdutoCriado("001"));
 	}
 
+	@Test
+	public void TC011_deveVerificarCadastroDisponivelAposLogin() {
+		loginPage.executarAcaoDeLogar("admin@admin.com", "admin@123");
+
+		assertTrue(cadastroPage.buttonCadastro.isDisplayed());
+	}
+
+
 	
 	@Test
-	public void TC011_naoDeveCadastrarProdutoNoSistemaComCodigoNomeQuantidadeValorEDataVazios() {
+	public void TC012_naoDeveCadastrarProdutoNoSistemaComCodigoNomeQuantidadeValorEDataVazios() {
 		cadastroPage.CaixaCadastro("", "","","","");
 
 		String mensagem = cadastroPage.obterMensagemCadastro();
 
 		assertEquals(mensagem, "Todos os campos são obrigatórios para o cadastro!");
 	}
-
 		
 	@Test
 	public void TC012_naoDeveCadastrarProdutoNoSistemaComCodigoNomeQuantidadeValorEDataVazios() {
@@ -100,5 +91,6 @@ public class CadastroTest extends BaseTest {
 	}
 
 }
+
 
 
