@@ -52,8 +52,19 @@ public class CadastroPO extends BasePO {
 		input.sendKeys(texto + Keys.TAB);
 	}
 
-	public void CaixaCadastro2click(String codigo, String nome, String quantidade, String valor, String data) {
-		buttonCadastro.click();
+//	public void CaixaCadastro2click(String codigo, String nome, String quantidade, String valor, String data) {
+//		buttonCadastro.click();
+//		buttonCadastro.click();
+//		escrever(inputCodigo, codigo);
+//		escrever(inputNome, nome);
+//		escrever(inputQuantidade, quantidade);
+//		escrever(inputValor, valor);
+//		escrever(inputData, data);
+//		buttonSalvar.click();
+//	}
+
+	public void CaixaCadastro(String codigo, String nome, String quantidade, String valor, String data) {
+		fecharModalSeAberto();
 		buttonCadastro.click();
 		escrever(inputCodigo, codigo);
 		escrever(inputNome, nome);
@@ -63,14 +74,16 @@ public class CadastroPO extends BasePO {
 		buttonSalvar.click();
 	}
 
-	public void CaixaCadastro(String codigo, String nome, String quantidade, String valor, String data) {
-		buttonCadastro.click();
-		escrever(inputCodigo, codigo);
-		escrever(inputNome, nome);
-		escrever(inputQuantidade, quantidade);
-		escrever(inputValor, valor);
-		escrever(inputData, data);
-		buttonSalvar.click();
+	public void fecharModalSeAberto() {
+		try {
+			WebElement modal = driver.findElement(By.id("cadastro-produto"));
+			if (modal.isDisplayed()) {
+				WebElement btnSair = driver.findElement(By.id("btn-sair"));
+				btnSair.click();
+			}
+		} catch (Exception e) {
+			// Modal not open, do nothing
+		}
 	}
 
 	public boolean verificarProdutoCriado(String codigo) {
