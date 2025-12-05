@@ -45,7 +45,9 @@ public class CadastroPO extends BasePO {
 		input.sendKeys(texto + Keys.TAB);
 	}
 	
-	public void CaixaCadastro(String codigo, String nome, String quantidade, String valor, String data) {
+	
+	
+	public void CaixaCadastro2click(String codigo, String nome, String quantidade, String valor, String data) {
 		buttonCadastro.click();
 		buttonCadastro.click();
 		escrever(inputCodigo, codigo);
@@ -53,8 +55,19 @@ public class CadastroPO extends BasePO {
 		escrever(inputQuantidade, quantidade);
 		escrever(inputValor, valor);
 		escrever(inputData, data);
-
 		buttonSalvar.click();
-		
+	}
+	
+	
+	public void CaixaCadastro(String codigo, String nome, String quantidade, String valor, String data) {
+		buttonCadastro.click();
+		escrever(inputCodigo, codigo);
+		escrever(inputNome, nome);
+		escrever(inputQuantidade, quantidade);
+		escrever(inputValor, valor);
+		escrever(inputData, data);
+		buttonSalvar.click();
 	}
 }
+}
+
