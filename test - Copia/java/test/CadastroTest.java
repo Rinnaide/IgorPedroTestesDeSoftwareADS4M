@@ -20,7 +20,13 @@ public class CadastroTest extends BaseTest {
 	}
 
 	@Test
-	public void TC010_deveVerificarSeUsuarioCriouUmProduto() {
+	public void TC010_deveVerificarCadastroDisponivelAposLogin() {
+		loginPage.executarAcaoDeLogar("admin@admin.com", "admin@123");
+
+		assertTrue(cadastroPage.buttonCadastro.isDisplayed());
+	}
+	@Test
+	public void TC011_deveVerificarSeUsuarioCriouUmProduto() {
 		loginPage.executarAcaoDeLogar("admin@admin.com", "admin@123");
 
 		cadastroPage.CaixaCadastro("001", "Produto Teste", "10", "100.00", "2025/12/05");
@@ -28,12 +34,7 @@ public class CadastroTest extends BaseTest {
 		assertTrue(cadastroPage.verificarProdutoCriado("001"));
 	}
 
-	@Test
-	public void TC011_deveVerificarCadastroDisponivelAposLogin() {
-		loginPage.executarAcaoDeLogar("admin@admin.com", "admin@123");
 
-		assertTrue(cadastroPage.buttonCadastro.isDisplayed());
-	}
 
 
 	
@@ -91,6 +92,7 @@ public class CadastroTest extends BaseTest {
 	}
 
 }
+
 
 
 
