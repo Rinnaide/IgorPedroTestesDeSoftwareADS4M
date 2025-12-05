@@ -22,10 +22,12 @@ public class CadastroTest extends BaseTest {
 
 	
 	@Test
-	public void TC010_deveVerificarCadastroDisponivelAposLogin() {
-		loginPage.executarAcaoDeLogar("teste", "teste");
+	public void TC010_deveVerificarSeUsuarioCriouUmProduto() {
+		loginPage.executarAcaoDeLogar("admin@admin.com", "admin@123");
 
-		assertTrue(cadastroPage.buttonCadastro.isDisplayed());
+		cadastroPage.CaixaCadastro("001", "Produto Teste", "10", "100.00", "2025/12/05");
+
+		assertTrue(cadastroPage.verificarProdutoCriado("001"));
 	}
 
 	
