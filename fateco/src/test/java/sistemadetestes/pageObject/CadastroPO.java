@@ -1,11 +1,16 @@
 package sistemadetestes.pageObject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import pageObject.BasePO;
+import java.util.List;
+import java.time.Duration;
 
 public class CadastroPO extends BasePO {
 
@@ -69,7 +74,13 @@ public class CadastroPO extends BasePO {
 	}
 
 	public boolean verificarProdutoCriado(String codigo) {
-		// Assuming there's a way to check, but since it's not implemented, return false for now
+		List<WebElement> rows = driver.findElements(By.cssSelector("table tbody tr"));
+		for (WebElement row : rows) {
+			WebElement firstCell = row.findElement(By.tagName("td"));
+			if (firstCell.getText().equals(codigo)) {
+				return true;
+			}
+		}
 		return false;
 	}
 }

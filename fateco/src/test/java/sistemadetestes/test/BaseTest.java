@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 public class BaseTest {
     protected static WebDriver driver;
-    protected static final String URL_BASE = "file:///C:/Users/biblioteca.sl/Downloads/IgorPedroTestesDeSoftwareADS4M/fatec/sistema/login.html";
+    protected static final String URL_BASE = "file:///C:/Users/36129382024.1m/Documents/IgorPedroTestesDeSoftwareADS4M/fateco/sistema/login.html";
     protected static final String PATH_DRIVE = "src/test/resources/chromedriver1420744459.exe";
 
     @BeforeClass

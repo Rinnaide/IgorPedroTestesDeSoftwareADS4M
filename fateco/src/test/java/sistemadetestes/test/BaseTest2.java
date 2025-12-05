@@ -10,7 +10,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BaseTest2 {
 	protected static WebDriver driver;
-	protected static final String URL_BASE = "file:///C:/Users/biblioteca.sl/Downloads/IgorPedroTestesDeSoftwareADS4M/fatec/sistema/login.html";
+	protected static final String URL_BASE = "file:///C:/Users/36129382024.1m/Documents/IgorPedroTestesDeSoftwareADS4M/fateco/sistema/produtos.html";
+	protected static final String URL_LOGIN = "file:///C:/Users/36129382024.1m/Documents/IgorPedroTestesDeSoftwareADS4M/fateco/sistema/login.html";
 	protected static final String PATH_DRIVE = "src/test/resources/chromedriver1420744459.exe";
 
     @BeforeClass
