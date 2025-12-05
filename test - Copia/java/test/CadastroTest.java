@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import pageObject.CadastroPO;
 
-public class CadastroTest extends BaseTest {
+public class CadastroTest extends BaseTest2 {
 	public static CadastroPO cadastroPage;
 
 	@BeforeClass
@@ -25,3 +25,4 @@ public class CadastroTest extends BaseTest {
 	}
 	
 }
+
