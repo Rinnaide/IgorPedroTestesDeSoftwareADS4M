@@ -33,6 +33,9 @@ public class CadastroPO extends BasePO {
 	@FindBy(id = "btn-adicionar")
 	public WebElement buttonCadastro;
 	
+	@FindBy(id = "btn-salvar")
+	public WebElement buttonSalvar;
+	
 	public String obterMensagemCadastro() {
 		return this.spanMensagemCadastro.getText();
 	}
@@ -50,6 +53,8 @@ public class CadastroPO extends BasePO {
 		escrever(inputQuantidade, quantidade);
 		escrever(inputValor, valor);
 		escrever(inputData, data);
+
+		buttonSalvar.click();
 		
 	}
 }
